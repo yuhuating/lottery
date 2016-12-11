@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>抽奖系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <!-- Jquery -->
+    <script src="/static/bootstrap/js/jquery-2.0.3.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .side-left {
+            height: 100%;
+            position: absolute;
+            left: 0;
+        }
+
+        .side-right {
+            height: 100%;
+            position: absolute;
+            right: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        #Result {
+            border: 3px solid #40AA53;
+            margin: 0 auto;
+            text-align: center;
+            width: 400px;
+            padding: 50px 0;
+            background: #efe;
+        }
+
+        #ResultNum {
+            font-size: 50pt;
+            font-family: Verdana
+        }
+
+        #Button {
+            margin: 50px 0 0 0;
+        }
+
+        #Button input {
+            font-size: 40px;
+            padding: 0 50px;
+        }
+
+        #btn {
+            background-color: #40AA53;
+            border: 1px solid #40AA53;
+            width: auto;
+            height: 55px;
+            margin: 0em auto;
+            font-size: 1em;
+            border-radius: 2.5px;
+            -moz-border-radius: 2.5px;
+            -webkit-border-radius: 2.5px;
+            color: #FFF;
+        }
+    </style>
+</head>
+
+
+<body style="height: 100%">
+<div id="container">
+    <div class="row">
+        <div class="col-lg-3  col-sm-4 side-left col-md-offset-1">
+            <div class="panel panel-default" style=" margin-top:15px">
+                <div class="panel-body">
+                    <h3><b>奖品列表</b></h3>
+                </div>
+                <div class="list-group" style="text-align:left" id="awards-list">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8 side-right">
+            <div class="page-header">
+                <h1>当前奖品：<label id="award-tag">--</label>
+                    <small>剩余：<label id="award-count">--</label>个</small>
+                </h1>
+            </div>
+
+            <div id="Result" style="color:#40AA53">
+                <span id="ResultNum">*****</span>
+            </div>
+
+            <div id="Button">
+                <input type='button' id="btn" value='开始' onclick='beginRndNum(this)'/>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span
+                                    aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">数据查看</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <h3><b>中奖名单</b></h3>
+                                    </div>
+                                    <div class="list-group" style="text-align:left" id="winner-list"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                     </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<audio id="runingmic" class="hide" loop>
+    <source src="/static/music/runing.wav">
+</audio>
+<audio id="pausemic" class="hide">
+    <source src="/static/music/stop.mp3">
+</audio>
+
+
+<script type="text/javascript" src="/static/bootstrap/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/layer/layer.js"></script>
+<script type="text/javascript" src="/static/script.js?id=2"></script>
+</body>
+</html>
