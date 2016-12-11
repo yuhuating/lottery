@@ -1,5 +1,6 @@
 # lottery
-部门年会抽奖系统， Python编写，自带Python环境，无第三方依赖，支持Windows/MacOSX/Linux  
+部门年会抽奖系统， Python编写，自带Python环境，无第三方依赖，支持Windows/MacOSX/Linux    
+
 使用说明：
 1、  双击start.bat启动程序；
 2、	打开浏览器，输入http://127.0.0.1:80
